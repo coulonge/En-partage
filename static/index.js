@@ -1,6 +1,8 @@
-let menu_items = document.querySelectorAll('.menu ul li');
-menu_items.forEach(item => {
+document.querySelectorAll('.menu ul li').forEach(item => {
     item.addEventListener('click' ,() => {
-        item.classList.toggle('active');
+        document.querySelectorAll('.menu ul li.active').forEach(elem => {
+            elem.classList.remove('active')
+        })
+        item.classList.add('active');
     })
 })
